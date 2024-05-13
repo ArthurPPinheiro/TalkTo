@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:gravity="end">
+    <TextView
+        android:id="@+id/senderNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="teste"
+        android:paddingHorizontal="20dp"
+        android:textSize="12dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="2dp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/sentMessageTimeTextView"
+            android:text="teste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:paddingHorizontal="4dp"/>
+        <TextView
+            android:id="@+id/sentMessageTextView"
+            android:text="teste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:background="@drawable/rounded_sent_message_background"
+            android:maxWidth="240dp"
+            android:layout_margin="8dp"
+            />
+    </LinearLayout>
+</LinearLayout>
