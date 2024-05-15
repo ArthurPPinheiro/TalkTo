@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#161616</color>
+    <color name="backgroundButton">#262626</color>
+    <color name="backgroundSecondary">#262626</color>
+    <color name="purple">#7500EE</color>
+    <color name="text">#BDBDBD</color>
+    <color name="backgroundLight">#262626</color>
+    <color name="topbar">#202020</color>
+</resources>

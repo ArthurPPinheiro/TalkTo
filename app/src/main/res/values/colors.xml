@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background">#FFFFFF</color>
+    <color name="backgroundButton">#AAAAAA</color>
+    <color name="backgroundSecondary">#FFFFFF</color>
+    <color name="purple">#7500EE</color>
+    <color name="text">#262626</color>
+    <color name="backgroundLight">#EAEAEA</color>
+    <color name="topbar">#BDBDBD</color>
 </resources>
