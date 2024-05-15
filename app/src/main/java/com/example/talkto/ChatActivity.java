@@ -27,6 +27,9 @@ public class ChatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_chat);
+
         ImageButton menuButton = findViewById(R.id.menuButton);
 
         menuButton.setOnClickListener(new View.OnClickListener() {
@@ -36,9 +39,6 @@ public class ChatActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
 
         // Inicialize a lista de mensagens
         messages = new ArrayList<>();
