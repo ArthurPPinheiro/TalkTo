@@ -1,28 +1,24 @@
 package com.example.talkto;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
-import java.util.List;
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ChatActivity extends AppCompatActivity {
 
     private ListView chatListView;
     private MessageAdapter messageAdapter;
-    private List<Message> messages;
+    private RecyclerView recyclerView;
+    private ImageButton menuButton;
+    private ImageButton sendButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +26,18 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        ImageButton menuButton = findViewById(R.id.menuButton);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        messageAdapter = new MessageAdapter(new ArrayList<>(0));
+        recyclerView.setAdapter(messageAdapter);
+
+        populateMessages();
+
+        menuButton = findViewById(R.id.menuButton);
+        sendButton = findViewById(R.id.sendButton);
 
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,17 +47,27 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-        // Inicialize a lista de mensagens
-        messages = new ArrayList<>();
-        messages.add(new Message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor facilisis.", false));
-        messages.add(new Message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor facilisis.", false));
-        messages.add(new Message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor facilisis.", true));
-        messages.add(new Message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor facilisis.", false));
-        messages.add(new Message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor facilisis.", true));
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Message message = new Message("Test User", "message test text", "14:35", true);
+                messageAdapter.updateList(message);
+            }
+        });
 
-        // Inicialize e defina o adapter na ListView
-        messageAdapter = new MessageAdapter(this, messages);
-        chatListView = findViewById(R.id.chatListView);
-        chatListView.setAdapter(messageAdapter);
     }
+
+    private void populateMessages() {
+        Message message1 = new Message("Usuario 3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor facilisis.", "14:35", false);
+        messageAdapter.updateList(message1);
+        Message message2 = new Message("Usuário 2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor facilisis.", "14:35", false);
+        messageAdapter.updateList(message2);
+        Message message3 = new Message("Usuário 1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor facilisis.", "14:35", true);
+        messageAdapter.updateList(message3);
+        Message message4 = new Message("Usuário 2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor facilisis.", "14:35", false);
+        messageAdapter.updateList(message4);
+        Message message5 = new Message("Usuário 1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor facilisis.", "14:35", true);
+        messageAdapter.updateList(message5);
+    }
+
 }

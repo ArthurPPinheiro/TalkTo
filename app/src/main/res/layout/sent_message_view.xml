@@ -21,7 +21,7 @@
         android:paddingVertical="2dp"
         android:gravity="center">
         <TextView
-            android:id="@+id/sentMessageTimeTextView"
+            android:id="@+id/messageTimestampTextView"
             android:text="teste"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             android:textSize="12dp"
             android:paddingHorizontal="4dp"/>
         <TextView
-            android:id="@+id/sentMessageTextView"
+            android:id="@+id/messageTextView"
             android:text="teste"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
