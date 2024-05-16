@@ -29,6 +29,7 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(layoutManager);
 
         messageAdapter = new MessageAdapter(new ArrayList<>(0));
@@ -52,6 +53,7 @@ public class ChatActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Message message = new Message("Test User", "message test text", "14:35", true);
                 messageAdapter.updateList(message);
+                recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
             }
         });
 

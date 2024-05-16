@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         logoImageView.startAnimation(fadeInAnimation);
 
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(SplashActivity.this, ChatActivity.class);
+            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }, SPLASH_DELAY);

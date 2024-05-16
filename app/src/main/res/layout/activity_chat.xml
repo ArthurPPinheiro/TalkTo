@@ -13,6 +13,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/topbar"
         android:textStyle="bold"
+        android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
         android:text="NOME WIFI"
         android:textSize="20dp"
@@ -27,30 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:background="@drawable/dark_grey_round_button"
-        android:contentDescription="Send"
         android:padding="10dp"
         android:src="@drawable/ic_menu"
         app:layout_constraintBottom_toBottomOf="@+id/topBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- ListView -->
-    <ListView
-        android:id="@+id/chatListView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/background"
-        android:clipToPadding="false"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="8dp"
-        android:padding="8dp"
-        android:stackFromBottom="true"
-        android:transcriptMode="alwaysScroll"
-        app:layout_constraintBottom_toTopOf="@id/messageEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topBar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -74,6 +56,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_message_input_background"
         android:hint="Digite uma mensagem..."
+        android:fontFamily="@font/montserrat_medium"
         android:textColorHint="@color/text"
         android:imeOptions="actionSend"
         android:inputType="text"
